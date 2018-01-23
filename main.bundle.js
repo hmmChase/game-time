@@ -48,14 +48,20 @@
 
 	var canvas = document.querySelector('canvas');
 
-	var ctx = canvas.getContext('2d');
-
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 
-	var spaceship1 = new Spaceship();
+	var ctx = canvas.getContext('2d');
+
+	var spaceship1 = new Spaceship(10, 10, 100, 100);
+
+	// ctx.fillStyle = "rgba(0, 255, 0, 1)";
+	// ctx.fillRect(100, 100, 100, 100)
+
+	spaceship1.draw(ctx);
 
 	function gameloop() {
+	  spaceship1.draw(ctx);
 
 	  requestAnimationFrame(gameloop);
 	}
@@ -66,19 +72,21 @@
 /* 1 */
 /***/ (function(module, exports) {
 
-	console.log('hi');
-
 	class Spaceship {
 	  constructor(x, y, width, height) {
-
-	    this.x = 10;
-	    this.y = 10;
-	    this.width = 10;
-	    this.height = 10;
+	    this.x = x;
+	    this.y = y;
+	    this.width = width;
+	    this.height = height;
 	  }
 
 	  draw(ctx) {
 	    ctx.fillRect(this.x, this.y, this.width, this.height);
+	    return this;
+	  }
+
+	  erase(ctx) {
+	    ctx.clearRect(this.x, this.y, this.width, this.height);
 	    return this;
 	  }
 	}
