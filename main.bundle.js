@@ -45,18 +45,14 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var Spaceship = __webpack_require__(1);
-
+	// var Spaceship = require('./Asteroid.js');
 	var canvas = document.querySelector('canvas');
+	var ctx = canvas.getContext('2d');
+	var spaceship1 = new Spaceship(10, 10, 100, 100);
+	// var asteroid1 = new Asteroid();
 
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
-
-	var ctx = canvas.getContext('2d');
-
-	var spaceship1 = new Spaceship(10, 10, 100, 100);
-
-	// ctx.fillStyle = "rgba(0, 255, 0, 1)";
-	// ctx.fillRect(100, 100, 100, 100)
 
 	spaceship1.draw(ctx);
 
@@ -65,7 +61,10 @@
 
 	  requestAnimationFrame(gameloop);
 	}
-
+	ctx.beginpath();
+	ctx.arc(200, 200, 30, 0, Math.PI * 2, false);
+	ctx.strokeStyle = 'blue';
+	ctx.stroke();
 	requestAnimationFrame(gameloop);
 
 /***/ }),
