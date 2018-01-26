@@ -1,7 +1,43 @@
 body {
   margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
-canvas {
+#container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: middle;
+}
+
+#startScreen {
+  height: 600px;
+  width: 1000px;
   background: lightgray;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#startButton {
+  height: 100px;
+  width: 300px;
+  background: lightblue;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center;
+  align-content: center; */
+  /* vertical-align: middle; */
+}
+
+#game {
+  background: lightgray;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center;
+  align-content: center; */
+  /* vertical-align: middle; */
 }
