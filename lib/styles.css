@@ -12,20 +12,34 @@ body {
   align-items: middle;
 }
 
-#startScreen {
+#welcome {
+  display: flex;
+  border: 1px solid red;
+  font-family: 'VT323', monospace; 
+  font-size: 72px;
+  color: #ccc;
+}
+
+#start-screen {
   height: 600px;
   width: 1000px;
-  background: lightgray;
+  background: black;
   position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#startButton {
-  height: 100px;
-  width: 300px;
-  background: lightblue;
+#start-button {
+  height: 400px;
+  width: 800px;
+  background: black;
+  border: 2px solid red;
+  font-family: 'VT323', monospace; 
+  font-size: 48px;
+  color: #ccc;
+
   /* display: flex; */
   /* justify-content: center;
   align-items: center;
@@ -34,7 +48,8 @@ body {
 }
 
 #game {
-  background: lightgray;
+  background: black;
+
   /* display: flex; */
   /* justify-content: center;
   align-items: center;
