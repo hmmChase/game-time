@@ -1,15 +1,22 @@
 body {
   margin: 0;
-  height: 100%;
-  width: 100%;
 }
 
-#container {
-  height: 100%;
+#container { 
+  height: 800px;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: middle;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: url('https://az616578.vo.msecnd.net/files/2016/10/15/6361209775984223581480794734_space111.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+canvas {
+  width: 1000px;
+  height: 600px;
 }
 
 #welcome {
@@ -20,7 +27,9 @@ body {
   color: #ccc;
 }
 
-#start-screen {
+/*#start-screen,
+#game-over-screen {
+  margin-top: 50px; 
   height: 600px;
   width: 1000px;
   background: black;
@@ -29,11 +38,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+}*/
 
 #start-button {
-  height: 400px;
-  width: 800px;
+  position: absolute;
+  left: 118px;
+  top: 118px;
+  height: 600px;
+  width: 1000px;
   background: black;
   border: 2px solid red;
   font-family: 'VT323', monospace; 
@@ -45,6 +57,14 @@ body {
   align-items: center;
   align-content: center; */
   /* vertical-align: middle; */
+}
+
+#directions {
+  color: red;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+  width: 60%;
 }
 
 #game {
