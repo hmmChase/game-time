@@ -76,3 +76,16 @@ body {
   align-content: center; */
   /* vertical-align: middle; */
 }
+
+#end-screen {
+  width: 1000px;
+  height: 600px;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  border: 1px solid red;
+  font-size: 100px;
+  color: #ccc;
+  font-family: 'VT323', monospace;
+  display: none; 
+}
