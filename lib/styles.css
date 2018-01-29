@@ -14,10 +14,10 @@ body {
   background-repeat: no-repeat;
 }
 
-canvas {
+/* canvas {
   width: 1000px;
   height: 600px;
-}
+} */
 
 #welcome {
   display: flex;
@@ -64,7 +64,7 @@ canvas {
   display: flex;
   flex-direction: row;
   border: 1px solid red;
-  width: 60%;
+  /* width: 60%; */
 }
 
 #game {
