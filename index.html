@@ -16,36 +16,41 @@
       <header id="welcome">
         ASTEROIDS
       </header>
-      <button id="start-button">
-        Click here to play
-      </button>
-      <ul id="directions">
-        <li>Up: W</li>
-        <li>Down: S</li>
-        <li>Left: A</li>
-        <li>Right: D</li>
-        <li>Aim: Cursor</li>
-        <li>Shoot: Spacebar</li>
-      </ul>
+      <p id="play">Click to play</p>
+
     </div>
 
-    <div id="level">
-      Level: 1
+    <div id="game-stats">
+      <div id="level">
+        Level: 1
+      </div>
+
+      <div id="current-score">
+        Score: 100
+      </div>
+
+      <div id="high-score">
+        High score: 1000
+      </div>
     </div>
-
-    <div id="score">
-      Score: 100
-    </div>
-
-    <canvas id="game" width="1000px" height="600px"></canvas>
-
 
     <div id="end-screen">
-     <p>You Lose</p>
-     <p>Click here to try again</p>
+      <p>You Lose</p>
+      <p>Click here to try again</p>
     </div>
-  </main>
+  
 
+  <canvas id="game" width="1000px" height="600px"></canvas>
+
+  <ul id="directions">
+    <li>Up: W</li>
+    <li>Down: S</li>
+    <li>Left: A</li>
+    <li>Right: D</li>
+    <li>Aim: Cursor</li>
+    <li>Shoot: Spacebar</li>
+  </ul>
+</main>
   <script src="main.bundle.js"></script>
 </body>
 
