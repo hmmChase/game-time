@@ -5,7 +5,7 @@ body {
 }
 
 #container { 
-  height: 760px;
+  height: 706px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -88,16 +88,4 @@ body {
   color: #ccc;
   font-family: 'VT323', monospace;
   font-size: 20px;
-}
-
-#level {
-
-}
-
-#current-score {
-
-}
-
-#high-score {
-
 }
