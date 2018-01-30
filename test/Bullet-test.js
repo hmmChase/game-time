@@ -1,5 +1,5 @@
 const chai = require('chai');
-const { assert } = chai;
+const { assert, expect } = chai;
 // const assert = chai.assert;
 const Bullet = require('../lib/Bullet.js')
 
