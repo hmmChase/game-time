@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-#container { 
+#container {
   height: 706px;
   width: 100%;
   display: flex;
@@ -27,11 +27,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 #play {
-  font-family: 'VT323', monospace; 
+  font-family: 'VT323', monospace;
   font-size: 36px;
   color: #ccc;
 }
@@ -39,18 +38,18 @@ body {
 #welcome {
   /* display: flex; */
   /* border: 1px solid red; */
-  font-family: 'VT323', monospace; 
+  font-family: 'VT323', monospace;
   font-size: 72px;
   color: #ccc;
 }
 
 #directions {
-  /* margin-top: 0; */
+  padding: 0;
   /* color: red; */
   background-color: black;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   position: absolute;
   top: 600px;
   border: 1px solid red;
@@ -76,7 +75,11 @@ body {
   font-size: 100px;
   color: #ccc;
   font-family: 'VT323', monospace;
-  display: none; 
+  display: none;
+}
+
+#try-again {
+  font-size: 48px;
 }
 
 #game-stats {
