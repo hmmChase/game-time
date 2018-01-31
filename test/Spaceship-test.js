@@ -58,16 +58,69 @@ describe('Spaceship', () => {
     assert.equal(spaceship.y, 320);
   })
 
-  it('should loop around the corner', () => {
+  it('should loop around the right corner', () => {
     assert.equal(spaceship.x, 500);
     assert.equal(canvas.width, 1000);
-    for (let i = 0; i < 30; i ++) {
+    for (let i = 0; i < 25; i ++) {
       spaceship.moveRight()
       spaceship.update(canvas)
     }
-    assert.equal(spaceship.x, 30);
+    assert.equal(spaceship.x, 1000);
+    for (let i = 0; i < 2; i ++) {
+      spaceship.moveRight()
+      spaceship.update(canvas)
+    }
+    assert.equal(spaceship.x, -30);
+
   })
 
+  it('should loop around the left corner', () => {
+    assert.equal(spaceship.x, 500);
+    assert.equal(canvas.width, 1000);
+    for (let i = 0; i < 25; i ++) {
+      spaceship.moveLeft()
+      spaceship.update(canvas)
+    }
+    assert.equal(spaceship.x, 0);
+
+    for (let i = 0; i < 2; i ++) {
+      spaceship.moveLeft()
+      spaceship.update(canvas)
+    }
+    assert.equal(spaceship.x, 1030);
+  })
+
+  it('should loop over the top', () => {
+    assert.equal(spaceship.y, 300);
+    assert.equal(canvas.height, 600);
+    for (let i = 0; i < 15; i ++) {
+      spaceship.moveUp()
+      spaceship.update(canvas)
+    }
+    assert.equal(spaceship.y, 0);
+
+    for (let i = 0; i < 2; i ++) {
+      spaceship.moveUp()
+      spaceship.update(canvas)
+    }
+    assert.equal(spaceship.y, 630);
+  })
+
+  it('should loop around the bottom', () => {
+    assert.equal(spaceship.y, 300);
+    assert.equal(canvas.height, 600);
+    for (let i = 0; i < 15; i ++) {
+      spaceship.moveDown()
+      spaceship.update(canvas)
+    }
+    assert.equal(spaceship.y, 600);
+
+    for (let i = 0; i < 2; i ++) {
+      spaceship.moveDown()
+      spaceship.update(canvas)
+    }
+    assert.equal(spaceship.y, -30);
+  })
 
 
 })

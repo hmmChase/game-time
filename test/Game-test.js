@@ -51,12 +51,33 @@ describe('Game', () => {
     expect(game.asteroids.length).to.equal(15)
   })
 
-  it('should have random, faster asteroids on level 2', () => {
-    game.levelTwoCreateAsteroids;
-    expect(asteroids[2].dx).to.be.within(-3.5, 3.5)
+  it('should have even more asteroids on level 3', () => {
+    game.levelThreeCreateAsteroids();
+    expect(game.asteroids.length).to.equal(20)
   })
 
-  it('')
+  it('should have a ton of asteroids on level 4', () => {
+    game.levelFourCreateAsteroids();
+    expect(game.asteroids.length).to.equal(25)
+  })
+
+  it('should have the most amount of of asteroids on level 5', () => {
+    game.levelFiveCreateAsteroids();
+    expect(game.asteroids.length).to.equal(30)
+  })
+
+  it('should have random, faster asteroids on level 2', () => {
+    game.levelTwoCreateAsteroids;
+    expect(asteroids[4].dx).to.be.within(-3.5, 3.5);
+    expect(asteroids[7].dx).to.be.within(-3.5, 3.5);
+  })
+
+  it('should have random, faster asteroids on level 3', () => {
+    game.levelThreeCreateAsteroids;
+    expect(asteroids[2].dx).to.be.within(-5, 5);
+    expect(asteroids[9].dx).to.be.within(-5, 5);
+  })
+
 
 
 
