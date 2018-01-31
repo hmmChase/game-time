@@ -1,6 +1,7 @@
 const chai = require('chai');
 const { assert, expect } = chai;
-const Bullet = require('../lib/Bullet.js')
+
+const Bullet = require('../lib/Bullet.js');
 
 describe('Bullet', () => {
   let bullets = [];
@@ -18,5 +19,5 @@ describe('Bullet', () => {
   it('should be a small bullet', () => {
     assert.equal(bullets[0].radius, 3)
   })
-  
 })
+

@@ -2,16 +2,16 @@ const chai = require('chai');
 const { assert, expect } = chai;
 const Asteroid = require('../lib/Asteroid.js');
 const canvas = {
-  width: 1000,
-  height: 600
-}
+  height: 600,
+  width: 1000
+};
 
 describe('Asteroid', () => {
   const asteroids = [];
   
   beforeEach( () => {
     for (let i = 0; i < 10; i++) {
-    asteroids.push(new Asteroid());
+      asteroids.push(new Asteroid());
     }
   })
 
@@ -84,4 +84,4 @@ describe('Asteroid', () => {
     }
     assert.equal(asteroids[5].x, -10);
   })  
-})
+});

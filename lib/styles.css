@@ -1,91 +1,88 @@
 body {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   margin: 0;
 }
 
-#container { 
-  height: 706px;
-  width: 100%;
+#container {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
-  /* justify-content: space-evenly; */
   align-items: center;
+  height: 706px;
+  width: 100%;
+  padding-top: 20px;
   background: url('https://az616578.vo.msecnd.net/files/2016/10/15/6361209775984223581480794734_space111.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  color: #ccc;
+  font-family: 'VT323', monospace;
 }
 
 #start-screen {
-  height: 600px;
-  width: 1000px;
-  background: black;
-  border: 2px solid red;
   position: absolute;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  
+  height: 600px;
+  width: 1000px;
+  border: 2px solid #ff0000;
+  background: #000;
 }
 
 #play {
-  font-family: 'VT323', monospace; 
-  font-size: 36px;
-  color: #ccc;
+  font-size: 48px;
 }
 
 #welcome {
-  /* display: flex; */
-  /* border: 1px solid red; */
-  font-family: 'VT323', monospace; 
   font-size: 72px;
-  color: #ccc;
 }
 
 #directions {
-  /* margin-top: 0; */
-  /* color: red; */
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   position: absolute;
   top: 600px;
-  border: 1px solid red;
-  list-style-type: none;
-  font-size: 30px;
-  color: #ccc;
-  font-family: 'VT323', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 900px;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  background-color: #000;
+  font-size: 32px;
+  list-style-type: none;
 }
 
 #game {
-  background: black;
   display: none;
+  background: #000;
 }
 
 #end-screen {
-  width: 1000px;
-  height: 600px;
-  text-align: center;
-  margin: 0 auto;
   position: absolute;
-  border: 1px solid red;
-  font-size: 100px;
-  color: #ccc;
-  font-family: 'VT323', monospace;
-  display: none; 
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
+  width: 1000px;
+  border: 1px solid #ff0000;
+}
+
+#game-over {
+  margin-top: 0;
+  font-size: 72px;
+}
+
+#try-again {
+  margin: 0;
+  font-size: 48px;
 }
 
 #game-stats {
-  display: none;
-  justify-content: space-around;
   position: absolute;
   top: 30px;
+  display: none;
+  justify-content: space-around;
   width: 800px;
-  color: #ccc;
-  font-family: 'VT323', monospace;
-  font-size: 20px;
+  font-size: 28px;
 }
