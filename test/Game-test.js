@@ -1,11 +1,14 @@
 const chai = require('chai');
 const { assert, expect } = chai;
+
 const Game = require('../lib/Game.js');
+
 const Asteroid = require('../lib/Asteroid.js');
 
 describe('Game', function() {
   let asteroids;
   let game;
+
 
   beforeEach(function() {
     game = new Game();
@@ -32,7 +35,6 @@ describe('Game', function() {
   });
 
   it('should have more asteroids on level two', function() {
-    const game = new Game();
     game.levelTwoCreateAsteroids();
     assert.lengthOf(game.asteroids, 15);
   });
@@ -68,7 +70,7 @@ describe('Game', function() {
   //   assert.equal(game2.highScore, 10)
   // })
 
-  // it.skip('should increment to level two, if alive and all asteroids destroyed', function () {
+  // it('should increment to level two, if alive and all asteroids destroyed', function () {
   //   const game = new Game();
   //   game.levelOneCreateAsteroids();
   //   assert.equal(game.level, 1)
@@ -78,3 +80,4 @@ describe('Game', function() {
   //   assert.equal(game.level, 2)
   // })
 });
+

@@ -1,5 +1,6 @@
 const chai = require('chai');
 const { assert, expect } = chai;
+
 const Bullet = require('../lib/Bullet.js');
 
 describe('Bullet', function() {
@@ -19,3 +20,4 @@ describe('Bullet', function() {
     assert.equal(bullets[0].radius, 3);
   });
 });
+
