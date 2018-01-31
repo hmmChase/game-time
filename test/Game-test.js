@@ -3,12 +3,12 @@ const { assert, expect } = chai;
 const Game = require('../lib/Game.js')
 const Asteroid = require('../lib/Asteroid.js');
 
-describe('Game', function() {
+describe('Game', () => {
 
   let asteroids;
   let game;
   
-  beforeEach(function () {
+  beforeEach( () => {
     game = new Game();
     asteroids = [];
     for (let i = 0; i < 10; i++) {
@@ -16,42 +16,42 @@ describe('Game', function() {
     }
   })
 
-  it('should be a function', function () {
+  it('should be a function', () => {
     assert.isFunction(Game)
   });
 
-  it('should have a default level of one', function () {
+  it('should have a default level of one', () => {
     assert.equal(game.level, 1)
   })
 
-  it('should have a default score', function () {
+  it('should have a default score', () => {
     assert.equal(game.score, 0)
   })
 
-  it('should have a default high score', function () {
+  it('should have a default high score', () => {
     assert.equal(game.highScore, 0)
   })
 
-  it('should have more asteroids on level two', function() {
+  it('should have more asteroids on level two', () => {
     game.levelTwoCreateAsteroids();
     assert.lengthOf(game.asteroids, 15)
   })
 
-  it('should be able to make spaceship objects', function() {
+  it('should be able to make spaceship objects', () => {
     expect(game).to.be.a('object')
   })
 
-  it('should be able to make asteroid objects', function() {
+  it('should be able to make asteroid objects', () => {
     game.levelOneCreateAsteroids;
     expect(game.asteroids).to.be.a('array')
   })
 
-  it('should have more asteroids on level 2', function() {
+  it('should have more asteroids on level 2', () => {
     game.levelTwoCreateAsteroids();
     expect(game.asteroids.length).to.equal(15)
   })
 
-  it('should have random, faster asteroids on level 2', function() {
+  it('should have random, faster asteroids on level 2', () => {
     game.levelTwoCreateAsteroids;
     expect(asteroids[2].dx).to.be.within(-3.5, 3.5)
   })

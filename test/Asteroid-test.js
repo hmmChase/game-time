@@ -6,39 +6,34 @@ const canvas = {
   height: 600
 }
 
-describe('Asteroid', function() {
+describe('Asteroid', () => {
   const asteroids = [];
   
-  beforeEach(function () {
+  beforeEach( () => {
     for (let i = 0; i < 10; i++) {
     asteroids.push(new Asteroid());
     }
   })
 
-  it('should generate 10 asteroids on start', function () {
+  it('should generate 10 asteroids on start', () => {
     assert.equal(asteroids.length, 10) 
   });
 
-  it('should be a function', function () {
+  it('should be a function', () => {
     assert.isFunction(Asteroid)
   });
 
-  it('should have an x coordinate', function () {
+  it('should have an x coordinate', () => {
     assert.equal(asteroids[5].x, -60)
   })
 
-  it('should have an y coordinate', function () {
+  it('should have an y coordinate', () => {
     assert.equal(asteroids[5].y, -60)
   })
 
-  it('should have a radius', function () {
+  it('should have a radius', () => {
     assert.equal(asteroids[5].radius, 30)
   })
 
-  // it('should', function () {
-  //   asteroids.forEach((asteroid) => {
-      
-  //   }update()
-  // })
-
+  
 })
