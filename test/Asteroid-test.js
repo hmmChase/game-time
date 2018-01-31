@@ -1,7 +1,10 @@
 const chai = require('chai');
 const { assert, expect } = chai;
-// const assert = chai.assert;
-const Asteroid = require('../lib/Asteroid.js')
+const Asteroid = require('../lib/Asteroid.js');
+const canvas = {
+  width: 1000,
+  height: 600
+}
 
 describe('Asteroid', function() {
   const asteroids = [];
@@ -31,5 +34,11 @@ describe('Asteroid', function() {
   it('should have a radius', function () {
     assert.equal(asteroids[5].radius, 30)
   })
+
+  // it('should', function () {
+  //   asteroids.forEach((asteroid) => {
+      
+  //   }update()
+  // })
 
 })
