@@ -2,7 +2,6 @@ const chai = require('chai');
 const { assert, expect } = chai;
 
 const Game = require('../lib/Game.js');
-
 const Asteroid = require('../lib/Asteroid.js');
 
 describe('Game', () => {
@@ -78,5 +77,17 @@ describe('Game', () => {
     game.levelThreeCreateAsteroids;
     expect(asteroids[2].dx).to.be.within(-5, 5);
     expect(asteroids[9].dx).to.be.within(-5, 5);
+  })
+
+  it('should have random, faster asteroids on level 4', () => {
+    game.levelFourCreateAsteroids;
+    expect(asteroids[3].dx).to.be.within(-6, 6);
+    expect(asteroids[8].dx).to.be.within(-6, 6);
+  })
+
+  it('should have random, faster asteroids on level 5', () => {
+    game.levelFiveCreateAsteroids;
+    expect(asteroids[1].dx).to.be.within(-7.5, 7.5);
+    expect(asteroids[6].dx).to.be.within(-7.5, 7.5);
   })
 })

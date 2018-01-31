@@ -1,5 +1,6 @@
 const chai = require('chai');
 const { assert, expect } = chai;
+const Gamepiece = require('../lib/Gamepiece.js');
 const Spaceship = require('../lib/Spaceship.js');
 const Game = require('../lib/Game.js');
 const canvas = {
@@ -11,15 +12,19 @@ describe('Spaceship', () => {
 
   let game;
   let spaceship;
-  
+
   beforeEach(function () {
     game = new Game();
-    spaceship = new Spaceship();
+    spaceship = new Spaceship(500, 300, 30, 20, 20);
   })
 
   it('should be an constructor', () => {
     assert.isFunction(Spaceship, true)
   });
+
+  it('extends the gamepiece class', () => {
+    expect(spaceship).to.be.instanceOf(Gamepiece);
+  })
 
   it('spaceship is alive', () => {
     assert.equal(spaceship.alive, true)
