@@ -24,4 +24,12 @@ describe('Asteroid', function() {
     assert.equal(asteroids[5].x, -60)
   })
 
+  it('should have an y coordinate', function () {
+    assert.equal(asteroids[5].y, -60)
+  })
+
+  it('should have a radius', function () {
+    assert.equal(asteroids[5].radius, 30)
+  })
+
 })

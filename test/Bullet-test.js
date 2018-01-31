@@ -8,5 +8,11 @@ describe('Bullet', function() {
   it('should be a function', function () {
     assert.isFunction(Bullet)
   });
+
+  it('should be a small bullet', function () {
+    const bullet = new Bullet();
+    assert.equal(bullet.radius, 3)
+  })
+
   
 })
