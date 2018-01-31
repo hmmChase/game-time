@@ -1,50 +1,62 @@
 const chai = require('chai');
 const { assert, expect } = chai;
-// const assert = chai.assert;
-const Game = require('../lib/Game.js')
-// const Asteroid = require('./Asteroid.js');
-// const Bullet = require('./Bullet.js');
-// const Spaceship = require('./Spaceship.js');
+const Game = require('../lib/Game.js');
+const Asteroid = require('../lib/Asteroid.js');
 
 describe('Game', function() {
+  let asteroids;
+  let game;
 
-  it('should be a function', function () {
-    assert.isFunction(Game)
+  beforeEach(function() {
+    game = new Game();
+    asteroids = [];
+    for (let i = 0; i < 10; i++) {
+      asteroids.push(new Asteroid());
+    }
   });
 
-  it('should have a default level of one', function () {
-    const game = new Game()
-    assert.equal(game.level, 1)
-  })
+  it('should be a function', function() {
+    assert.isFunction(Game);
+  });
 
-  it('should have a default score', function () {
-    const game = new Game()
-    assert.equal(game.score, 0)
-  })
+  it('should have a default level of one', function() {
+    assert.equal(game.level, 1);
+  });
 
-  it('should have a default high score', function () {
-    const game = new Game()
-    assert.equal(game.highScore, 0)
-  })
+  it('should have a default score', function() {
+    assert.equal(game.score, 0);
+  });
+
+  it('should have a default high score', function() {
+    assert.equal(game.highScore, 0);
+  });
 
   it('should have more asteroids on level two', function() {
     const game = new Game();
     game.levelTwoCreateAsteroids();
-    assert.lengthOf(game.asteroids, 15)
-  })
+    assert.lengthOf(game.asteroids, 15);
+  });
 
   it('should be able to make spaceship objects', function() {
-    const game = new Game();
-    expect(game).to.be.a('object')
-  })
+    expect(game).to.be.a('object');
+  });
 
   it('should be able to make asteroid objects', function() {
-    const game = new Game();
-    game.levelOneCreateAsteroids;
-    expect(game.asteroids).to.be.a('array')
-  })
-})
+    game.levelOneCreateAsteroids();
+    expect(game.asteroids).to.be.a('array');
+  });
 
+  it('should have more asteroids on level 2', function() {
+    game.levelTwoCreateAsteroids();
+    expect(game.asteroids.length).to.equal(15);
+  });
+
+  it('should have random, faster asteroids on level 2', function() {
+    game.levelTwoCreateAsteroids();
+    expect(asteroids[2].dx).to.be.within(-3.5, 3.5);
+  });
+
+  it('');
 
   // it.skip('should have a new high score', function () {
   //   let game1 = new Game();
@@ -65,4 +77,4 @@ describe('Game', function() {
   //   game.levelUp()
   //   assert.equal(game.level, 2)
   // })
-
+});

@@ -1,18 +1,21 @@
 const chai = require('chai');
 const { assert, expect } = chai;
-// const assert = chai.assert;
-const Bullet = require('../lib/Bullet.js')
+const Bullet = require('../lib/Bullet.js');
 
 describe('Bullet', function() {
+  const bullets = [];
 
-  it('should be a function', function () {
-    assert.isFunction(Bullet)
+  beforeEach(function() {
+    for (let i = 0; i < 1; i++) {
+    bullets.push(new Bullet());
+    }
   });
 
-  it('should be a small bullet', function () {
-    const bullet = new Bullet();
-    assert.equal(bullet.radius, 3)
-  })
+  it('should be a function', function() {
+    assert.isFunction(Bullet);
+  });
 
-  
-})
+  it('should be a small bullet', function() {
+    assert.equal(bullets[0].radius, 3);
+  });
+});
