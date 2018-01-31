@@ -71,7 +71,6 @@ describe('Spaceship', () => {
       spaceship.update(canvas)
     }
     assert.equal(spaceship.x, -30);
-
   })
 
   it('should loop around the left corner', () => {
@@ -121,8 +120,6 @@ describe('Spaceship', () => {
     }
     assert.equal(spaceship.y, -30);
   })
-
-
 })
 
 

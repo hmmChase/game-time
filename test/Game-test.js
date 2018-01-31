@@ -77,31 +77,5 @@ describe('Game', () => {
     expect(asteroids[2].dx).to.be.within(-5, 5);
     expect(asteroids[9].dx).to.be.within(-5, 5);
   })
-
-
-
-
-
-
-  // it.skip('should have a new high score', function () {
-  //   let game1 = new Game();
-  //   assert.equal(game1.score, 0);
-  //   assert.equal(game1.highScore, 0);
-  //   game1.score = 10;
-  //   game1.checkScore();
-  //   let game2 = new Game();
-  //   assert.equal(game2.highScore, 10)
-  // })
-
-  // it('should increment to level two, if alive and all asteroids destroyed', function () {
-  //   const game = new Game();
-  //   game.levelOneCreateAsteroids();
-  //   assert.equal(game.level, 1)
-  //   game.asteroids = [];
-  //   assert.equal(game.spaceship.alive, true)
-  //   game.levelUp()
-  //   assert.equal(game.level, 2)
-  // })
-
 })
 
