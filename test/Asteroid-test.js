@@ -1,13 +1,16 @@
 const chai = require('chai');
 const { assert, expect } = chai;
 const Asteroid = require('../lib/Asteroid.js');
+const Bullet = require('../lib/Bullet.js');
+const Game = require('../lib/Game.js');
+
 const canvas = {
   height: 600,
   width: 1000
 };
 
 describe('Asteroid', () => {
-  const asteroids = [];
+  let asteroids = [];
   
   beforeEach( () => {
     for (let i = 0; i < 10; i++) {
@@ -83,5 +86,29 @@ describe('Asteroid', () => {
       asteroids[5].update(canvas);
     }
     assert.equal(asteroids[5].x, -10);
-  })  
+  })
+
+  it('should be destroyed when struck by a bullet', () => {
+    let asteroid = new Asteroid();
+    const bullets = []
+    const bullet = new Bullet(400, 300, 2, 0);
+
+    for (let i = 0; i > 10; i++) {
+      bullets.push(new Bullet(400, 300, 2, 0));
+    }
+
+    asteroids[5].x = 500;
+    asteroids[5].y = 300;
+    asteroids[5].dx = 0;
+    asteroids[5].dy = 0;
+
+    assert.equal(asteroids.length, 110)
+
+    for (let i = 0; i < 20; i++) {
+      bullet.update();
+      asteroid.checkBulletCollision(bullet, 0, bullets, asteroids);
+    }
+
+    assert.equal(asteroids.length, 109)
+  })
 });

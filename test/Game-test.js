@@ -1,6 +1,5 @@
 const chai = require('chai');
 const { assert, expect } = chai;
-
 const Game = require('../lib/Game.js');
 const Asteroid = require('../lib/Asteroid.js');
 
@@ -26,7 +25,7 @@ describe('Game', () => {
   })
 
   it('should have a default score', () => {
-    assert.equal(game.score, 0)
+    assert.equal(game.asteroid.score, 0)
   })
 
   it('should have a default high score', () => {

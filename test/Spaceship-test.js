@@ -1,6 +1,7 @@
 const chai = require('chai');
 const { assert, expect } = chai;
 const Gamepiece = require('../lib/Gamepiece.js');
+const Asteroid = require('../lib/Asteroid.js');
 const Spaceship = require('../lib/Spaceship.js');
 const Game = require('../lib/Game.js');
 const canvas = {
@@ -40,25 +41,25 @@ describe('Spaceship', () => {
   })
 
   it('should move left', () => {
-    spaceship.moveLeft()
+    spaceship.moveNeg('x', 'dx') // moveLeft
     assert.equal(spaceship.x, 480);
     assert.equal(spaceship.y, 300);
   })
 
   it('should move right', () => {
-    spaceship.moveRight()
+    spaceship.movePos('x', 'dx') // moveRight
     assert.equal(spaceship.x, 520);
     assert.equal(spaceship.y, 300);
   })
 
   it('should move up', () => {
-    spaceship.moveUp()
+    spaceship.moveNeg('y', 'dy') // moveUp
     assert.equal(spaceship.x, 500);
     assert.equal(spaceship.y, 280);
   })
 
   it('should move down', () => {
-    spaceship.moveDown()
+    spaceship.movePos('y', 'dy') // moveDown
     assert.equal(spaceship.x, 500);
     assert.equal(spaceship.y, 320);
   })
@@ -67,12 +68,12 @@ describe('Spaceship', () => {
     assert.equal(spaceship.x, 500);
     assert.equal(canvas.width, 1000);
     for (let i = 0; i < 25; i ++) {
-      spaceship.moveRight()
+      spaceship.movePos('x', 'dx') // moveRight
       spaceship.update(canvas)
     }
     assert.equal(spaceship.x, 1000);
     for (let i = 0; i < 2; i ++) {
-      spaceship.moveRight()
+      spaceship.movePos('x', 'dx') // moveRight
       spaceship.update(canvas)
     }
     assert.equal(spaceship.x, -30);
@@ -82,13 +83,13 @@ describe('Spaceship', () => {
     assert.equal(spaceship.x, 500);
     assert.equal(canvas.width, 1000);
     for (let i = 0; i < 25; i ++) {
-      spaceship.moveLeft()
+      spaceship.moveNeg('x', 'dx') // moveLeft
       spaceship.update(canvas)
     }
     assert.equal(spaceship.x, 0);
 
     for (let i = 0; i < 2; i ++) {
-      spaceship.moveLeft()
+      spaceship.moveNeg('x', 'dx') // moveLeft
       spaceship.update(canvas)
     }
     assert.equal(spaceship.x, 1030);
@@ -98,13 +99,13 @@ describe('Spaceship', () => {
     assert.equal(spaceship.y, 300);
     assert.equal(canvas.height, 600);
     for (let i = 0; i < 15; i ++) {
-      spaceship.moveUp()
+      spaceship.moveNeg('y', 'dy') // moveUp
       spaceship.update(canvas)
     }
     assert.equal(spaceship.y, 0);
 
     for (let i = 0; i < 2; i ++) {
-      spaceship.moveUp()
+      spaceship.moveNeg('y', 'dy') // moveUp
       spaceship.update(canvas)
     }
     assert.equal(spaceship.y, 630);
@@ -114,16 +115,39 @@ describe('Spaceship', () => {
     assert.equal(spaceship.y, 300);
     assert.equal(canvas.height, 600);
     for (let i = 0; i < 15; i ++) {
-      spaceship.moveDown()
+      spaceship.movePos('y', 'dy') // moveDown
       spaceship.update(canvas)
     }
     assert.equal(spaceship.y, 600);
 
     for (let i = 0; i < 2; i ++) {
-      spaceship.moveDown()
+      spaceship.movePos('y', 'dy') // moveDown
       spaceship.update(canvas)
     }
     assert.equal(spaceship.y, -30);
+  })
+
+  it('should not be alive when it hits an asteroid', () => {
+   
+    const asteroids = [];
+    
+    for (let i = 0; i < 10; i++) {
+      asteroids.push(new Asteroid());
+    }
+ 
+    asteroids[5].y = 300;
+    asteroids[5].x = 490;
+    asteroids[5].dx = 1;
+    asteroids[5].dy = 0;
+ 
+    assert.equal(spaceship.alive, true);
+
+    for (let i = 0; i < 20; i++) {
+     asteroids[5].update(canvas);
+     spaceship.asteroidSpaceShipCollision(asteroids)
+    }
+
+   assert.equal(spaceship.alive, false);
   })
 })
 
