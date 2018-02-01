@@ -78,7 +78,7 @@ describe('Asteroid', () => {
 
   it('should loop around the right side', () => {
     asteroids[5].y = 300;
-    asteroids[5].x = 1000;
+    asteroids[5].x = 1000;  
     asteroids[5].dx = 20;
     asteroids[5].dy = 0;
     assert.equal(asteroids[5].x, 1000);
