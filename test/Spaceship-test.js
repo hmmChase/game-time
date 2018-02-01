@@ -4,7 +4,6 @@ const Gamepiece = require('../lib/Gamepiece.js');
 const Asteroid = require('../lib/Asteroid.js');
 const Spaceship = require('../lib/Spaceship.js');
 const Game = require('../lib/Game.js');
-const Asteroid = require('../lib/Asteroid.js');
 const canvas = {
   width: 1000,
   height: 600
