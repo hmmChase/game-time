@@ -1,5 +1,5 @@
 # Asteroids
-## Chase Richard & Matt Walker
+#### Chase Richard & Matt Walker
 
 ## Synopsis
 #### We were tasked to build a game for our first project of Mod 2. Chase and I chose the classic arcade game, Asteroids. The goal of this project was to build and test a classic Arcade game using HTML5's Canvas element and Object Oriented Programming in Javascript. We were able to build it over two weeks with the help of Mocha and Chai testing suites. 
