@@ -1,4 +1,4 @@
-# Asteroids
+# Game-time
 #### Chase Richard & Matt Walker
 
 ## Synopsis
